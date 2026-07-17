@@ -341,17 +341,15 @@ nav a:hover {
 
 
 
+@media(max-width:700px){
+
 .hero-content {
 
-
-    max-width:
-    800px;
-
-
-    animation:
-    fadeIn 1s ease;
+animation:none;
 
 }
+
+
 
 
 
