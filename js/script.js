@@ -3,136 +3,202 @@
 ========================= */
 
 
-const hochzeitDatum = new Date(
-    "August 28, 2026 14:00:00"
-).getTime();
+const weddingDate = new Date("August 28, 2026 12:00:00").getTime();
 
 
 
-function countdown() {
+const countdown = setInterval(function() {
 
 
-    const jetzt = new Date().getTime();
+    const now = new Date().getTime();
 
 
-    const differenz = hochzeitDatum - jetzt;
-
-
-
-    if (differenz <= 0) {
-
-        document.getElementById("days").innerHTML = "0";
-        document.getElementById("hours").innerHTML = "0";
-        document.getElementById("minutes").innerHTML = "0";
-        document.getElementById("seconds").innerHTML = "0";
-
-        return;
-
-    }
+    const distance = weddingDate - now;
 
 
 
-    const tage = Math.floor(
-        differenz /
-        (1000 * 60 * 60 * 24)
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
     );
 
 
-
-    const stunden = Math.floor(
-        (differenz %
-        (1000 * 60 * 60 * 24))
-        /
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
         (1000 * 60 * 60)
     );
 
 
-
-    const minuten = Math.floor(
-        (differenz %
-        (1000 * 60 * 60))
-        /
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
         (1000 * 60)
     );
 
 
-
-    const sekunden = Math.floor(
-        (differenz %
-        (1000 * 60))
-        /
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
         1000
     );
 
 
 
-    document.getElementById("days").innerHTML =
-        tage;
+    document.getElementById("days").innerHTML = days;
+
+    document.getElementById("hours").innerHTML = hours;
+
+    document.getElementById("minutes").innerHTML = minutes;
+
+    document.getElementById("seconds").innerHTML = seconds;
 
 
-    document.getElementById("hours").innerHTML =
-        stunden;
+
+    if(distance < 0) {
 
 
-    document.getElementById("minutes").innerHTML =
-        minuten;
+        clearInterval(countdown);
 
 
-    document.getElementById("seconds").innerHTML =
-        sekunden;
+        document.querySelector(".countdown").innerHTML =
+        "Heute ist unser Hochzeitstag ❤️";
+
+
+    }
+
+
+
+},1000);
+
+
+
+
+
+
+
+
+/* =========================
+   Hamburger Menü
+========================= */
+
+
+const menuToggle = document.getElementById("menu-toggle");
+
+const navMenu = document.getElementById("nav-menu");
+
+
+
+if(menuToggle && navMenu){
+
+
+
+    menuToggle.addEventListener("click", function(){
+
+
+
+        navMenu.classList.toggle("active");
+
+
+
+        if(navMenu.classList.contains("active")){
+
+
+            menuToggle.innerHTML = "✕";
+
+
+        } else {
+
+
+            menuToggle.innerHTML = "☰";
+
+
+        }
+
+
+
+    });
+
+
+
+
+
+
+    // Menü schließen nach Klick auf Link
+
+    document.querySelectorAll("#nav-menu a")
+    .forEach(link => {
+
+
+        link.addEventListener("click", function(){
+
+
+            navMenu.classList.remove("active");
+
+
+            menuToggle.innerHTML = "☰";
+
+
+        });
+
+
+    });
+
 
 
 }
 
 
 
-setInterval(countdown,1000);
 
-
-countdown();
 
 
 
 
 /* =========================
-   Smooth Scroll Navigation
+   Smooth Scroll Offset
+   wegen fixer Navigation
 ========================= */
 
 
-document.querySelectorAll(
-    'a[href^="#"]'
-)
-.forEach(link => {
+document.querySelectorAll('a[href^="#"]')
+.forEach(anchor => {
 
 
-    link.addEventListener(
-        "click",
-        function(e){
+    anchor.addEventListener("click", function(e){
 
 
-            const ziel =
-                document.querySelector(
-                    this.getAttribute("href")
-                );
+        const target =
+        document.querySelector(this.getAttribute("href"));
 
 
-            if(ziel){
 
-                e.preventDefault();
+        if(target){
 
 
-                ziel.scrollIntoView({
+            e.preventDefault();
 
-                    behavior:
-                        "smooth"
 
-                });
 
-            }
+            const headerHeight =
+            document.querySelector("header").offsetHeight;
+
+
+
+            const position =
+            target.offsetTop - headerHeight;
+
+
+
+            window.scrollTo({
+
+                top: position,
+
+                behavior:"smooth"
+
+            });
 
 
         }
-    );
+
+
+    });
 
 
 });
