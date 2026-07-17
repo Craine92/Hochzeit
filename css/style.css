@@ -1,38 +1,48 @@
 /* =========================
-   Farben
+   Fonts
 ========================= */
 
 @font-face {
 
-    font-family:"Montserrat";
+    font-family: "Montserrat";
 
-    src:url("../fonts/Montserrat-Regular.woff2") format("woff2");
+    src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
 
-    font-weight:400;
+    font-weight: 400;
+
+    font-display: swap;
 
 }
-
 
 
 @font-face {
 
-    font-family:"Montserrat";
+    font-family: "Montserrat";
 
-    src:url("../fonts/Montserrat-Light.woff2") format("woff2");
+    src: url("../fonts/Montserrat-Light.woff2") format("woff2");
 
-    font-weight:300;
+    font-weight: 300;
+
+    font-display: swap;
 
 }
-
 
 
 @font-face {
 
-    font-family:"Great Vibes";
+    font-family: "Great Vibes";
 
-    src:url("../fonts/GreatVibes-Regular.woff2") format("woff2");
+    src: url("../fonts/GreatVibes-Regular.woff2") format("woff2");
+
+    font-display: swap;
 
 }
+
+
+
+/* =========================
+   Farben
+========================= */
 
 :root {
 
@@ -52,12 +62,10 @@
 
     --white: #ffffff;
 
-    --shadow:
+    --shadow: 
     0 15px 35px rgba(0,0,0,0.08);
 
 }
-
-
 
 
 
@@ -65,48 +73,35 @@
    Reset
 ========================= */
 
-
 * {
 
-    margin:0;
+    margin: 0;
 
-    padding:0;
+    padding: 0;
 
-    box-sizing:border-box;
+    box-sizing: border-box;
 
 }
-
 
 
 html {
 
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 
 }
-
 
 
 body {
 
-    font-family:
-    "Montserrat",
-    sans-serif;
+    font-family: "Montserrat", sans-serif;
 
+    background: var(--ivory);
 
-    background:
-    var(--ivory);
+    color: var(--text);
 
-
-    color:
-    var(--text);
-
-
-    line-height:
-    1.6;
+    line-height: 1.6;
 
 }
-
-
 
 
 
@@ -114,26 +109,17 @@ body {
    Navigation
 ========================= */
 
-
 header {
 
-    position:fixed;
+    position: fixed;
 
-    top:0;
+    top: 0;
 
-    width:100%;
+    width: 100%;
 
+    background: rgba(226,237,217,0.98);
 
-    background:
-    rgba(226,237,217,0.95);
-
-
-    backdrop-filter:
-    blur(10px);
-
-
-    z-index:1000;
-
+    z-index: 1000;
 
     border-bottom:
     1px solid rgba(201,162,39,.25);
@@ -141,46 +127,30 @@ header {
 }
 
 
-
 nav {
 
-    max-width:
-    1200px;
+    max-width: 1200px;
 
+    margin: auto;
 
-    margin:auto;
+    padding: 18px 30px;
 
+    display: flex;
 
-    padding:
-    18px 30px;
+    justify-content: space-between;
 
-
-    display:flex;
-
-
-    justify-content:
-    space-between;
-
-
-    align-items:center;
+    align-items: center;
 
 }
 
 
-
 .logo {
 
-    font-family:
-    "Great Vibes",
-    cursive;
+    font-family: "Great Vibes", cursive;
 
+    font-size: 2.4rem;
 
-    font-size:
-    2.4rem;
-
-
-    color:
-    var(--gold);
+    color: var(--gold);
 
 }
 
@@ -188,14 +158,11 @@ nav {
 
 nav ul {
 
-    list-style:none;
-
+    list-style: none;
 
     display:flex;
 
-
-    gap:
-    25px;
+    gap:25px;
 
 }
 
@@ -205,61 +172,38 @@ nav a {
 
     text-decoration:none;
 
+    color:var(--text);
 
-    color:
-    var(--text);
+    font-weight:500;
 
-
-    font-weight:
-    500;
-
-
-    transition:
-    .3s;
+    transition:.3s;
 
 }
-
 
 
 nav a:hover {
 
-    color:
-    var(--gold);
+    color:var(--gold);
 
 }
 
-
-
-
-
-/* Hamburger */
 
 
 .menu-toggle {
 
-
     display:none;
-
 
     background:none;
 
-
     border:none;
 
+    color:var(--gold);
 
-    color:
-    var(--gold);
-
-
-    font-size:
-    2rem;
-
+    font-size:2rem;
 
     cursor:pointer;
 
 }
-
-
 
 
 
@@ -270,29 +214,19 @@ nav a:hover {
 
 .hero {
 
-
-    min-height:
-    100vh;
-
+    min-height:100vh;
 
     display:flex;
 
-
     justify-content:center;
-
 
     align-items:center;
 
-
     text-align:center;
 
-
-    padding:
-    130px 20px 80px;
-
+    padding:130px 20px 80px;
 
     position:relative;
-
 
     overflow:hidden;
 
@@ -302,36 +236,21 @@ nav a:hover {
 
 .hero::before {
 
-
     content:"";
-
 
     position:absolute;
 
+    width:600px;
 
-    width:
-    600px;
+    height:600px;
 
+    background:var(--salbei);
 
-    height:
-    600px;
+    opacity:.35;
 
+    filter:blur(130px);
 
-    background:
-    var(--salbei);
-
-
-    opacity:
-    .35;
-
-
-    filter:
-    blur(130px);
-
-
-    border-radius:
-    50%;
-
+    border-radius:50%;
 
     z-index:-1;
 
@@ -339,48 +258,31 @@ nav a:hover {
 
 
 
-
-
-@media(max-width:700px){
-
 .hero-content {
 
-animation:none;
+    max-width:800px;
+
+    animation:fadeIn 1s ease;
 
 }
 
 
 
-
-
 .photo-placeholder {
 
+    width:180px;
 
-    width:
-    180px;
+    height:180px;
 
+    margin:auto auto 30px;
 
-    height:
-    180px;
-
-
-    margin:
-    auto auto 30px;
-
-
-    border-radius:
-    50%;
-
+    border-radius:50%;
 
     overflow:hidden;
 
+    border:5px solid var(--gold);
 
-    border:
-    5px solid var(--gold);
-
-
-    box-shadow:
-    var(--shadow);
+    box-shadow:var(--shadow);
 
 }
 
@@ -388,12 +290,9 @@ animation:none;
 
 .photo-placeholder img {
 
-
     width:100%;
 
-
     height:100%;
-
 
     object-fit:cover;
 
@@ -401,26 +300,15 @@ animation:none;
 
 
 
-
-
 h1 {
 
+    font-family:"Great Vibes", cursive;
 
-    font-family:
-    "Great Vibes",
-    cursive;
+    font-size:5rem;
 
+    font-weight:normal;
 
-    font-size:
-    5rem;
-
-
-    font-weight:
-    normal;
-
-
-    color:
-    var(--gold);
+    color:var(--gold);
 
 }
 
@@ -428,22 +316,13 @@ h1 {
 
 h2 {
 
+    font-family:"Great Vibes", cursive;
 
-    font-family:
-    "Great Vibes",
-    cursive;
+    font-size:3.2rem;
 
+    font-weight:normal;
 
-    font-size:
-    3.2rem;
-
-
-    font-weight:
-    normal;
-
-
-    color:
-    var(--gold);
+    color:var(--gold);
 
 }
 
@@ -451,37 +330,23 @@ h2 {
 
 .hero h2 {
 
-
-    color:
-    var(--salbei-dunkel);
+    color:var(--salbei-dunkel);
 
 }
-
-
 
 
 
 .ornament {
 
+    color:var(--gold);
 
-    color:
-    var(--gold);
+    font-size:1.5rem;
 
+    margin:20px 0;
 
-    font-size:
-    1.5rem;
-
-
-    margin:
-    20px 0;
-
-
-    letter-spacing:
-    8px;
+    letter-spacing:8px;
 
 }
-
-
 
 
 
@@ -492,17 +357,11 @@ h2 {
 
 .button {
 
-
     display:inline-block;
 
+    padding:15px 40px;
 
-    padding:
-    15px 40px;
-
-
-    border-radius:
-    50px;
-
+    border-radius:50px;
 
     background:
     linear-gradient(
@@ -511,20 +370,13 @@ h2 {
         var(--gold-dunkel)
     );
 
-
     color:white;
-
 
     text-decoration:none;
 
+    font-weight:500;
 
-    font-weight:
-    500;
-
-
-    transition:
-    .3s;
-
+    transition:.3s;
 
     box-shadow:
     0 10px 25px rgba(201,162,39,.25);
@@ -535,17 +387,11 @@ h2 {
 
 .button:hover {
 
+    background:var(--salbei-dunkel);
 
-    background:
-    var(--salbei-dunkel);
-
-
-    transform:
-    translateY(-3px);
+    transform:translateY(-3px);
 
 }
-
-
 
 
 
@@ -556,23 +402,15 @@ h2 {
 
 .countdown {
 
-
     display:flex;
-
 
     justify-content:center;
 
+    gap:15px;
 
-    gap:
-    15px;
+    flex-wrap:wrap;
 
-
-    flex-wrap:
-    wrap;
-
-
-    margin:
-    40px 0;
+    margin:40px 0;
 
 }
 
@@ -580,29 +418,17 @@ h2 {
 
 .countdown div {
 
+    background:rgba(255,250,240,.9);
 
-    background:
-    rgba(255,250,240,.9);
+    padding:15px;
 
+    min-width:90px;
 
-    padding:
-    15px;
+    border-radius:20px;
 
+    border:1px solid var(--salbei);
 
-    min-width:
-    90px;
-
-
-    border-radius:
-    20px;
-
-
-    border:
-    1px solid var(--salbei);
-
-
-    box-shadow:
-    var(--shadow);
+    box-shadow:var(--shadow);
 
 }
 
@@ -610,24 +436,15 @@ h2 {
 
 .countdown span {
 
-
     display:block;
 
+    font-size:2rem;
 
-    font-size:
-    2rem;
+    font-weight:bold;
 
-
-    font-weight:
-    bold;
-
-
-    color:
-    var(--gold);
+    color:var(--gold);
 
 }
-
-
 
 
 
@@ -638,13 +455,9 @@ h2 {
 
 .section {
 
-
-    padding:
-    100px 20px;
-
+    padding:100px 20px;
 
     text-align:center;
-
 
     position:relative;
 
@@ -653,7 +466,6 @@ h2 {
 
 
 .colored {
-
 
     background:
     linear-gradient(
@@ -668,56 +480,40 @@ h2 {
 
 .timeline {
 
+    max-width:1100px;
 
-    max-width:
-    1100px;
-
-
-    margin:
-    auto;
-
+    margin:auto;
 
     display:grid;
-
 
     grid-template-columns:
     repeat(auto-fit,minmax(280px,1fr));
 
-
-    gap:
-    30px;
+    gap:30px;
 
 }
 
 
 
+/* =========================
+   Cards
+========================= */
 
 
 .card {
 
+    background:rgba(255,250,240,.95);
 
-    background:
-    rgba(255,250,240,.95);
+    padding:35px;
 
-
-    padding:
-    35px;
-
-
-    border-radius:
-    30px;
-
+    border-radius:30px;
 
     border:
     1px solid rgba(143,170,121,.35);
 
+    box-shadow:var(--shadow);
 
-    box-shadow:
-    var(--shadow);
-
-
-    transition:
-    .3s;
+    transition:.3s;
 
 }
 
@@ -725,9 +521,7 @@ h2 {
 
 .card:hover {
 
-
-    transform:
-    translateY(-5px);
+    transform:translateY(-5px);
 
 }
 
@@ -735,13 +529,9 @@ h2 {
 
 .card h3 {
 
+    color:var(--salbei-dunkel);
 
-    color:
-    var(--salbei-dunkel);
-
-
-    margin:
-    15px 0;
+    margin:15px 0;
 
 }
 
@@ -749,60 +539,41 @@ h2 {
 
 .icon {
 
-
-    font-size:
-    2.8rem;
+    font-size:2.8rem;
 
 }
 
 
 
-
-
 /* =========================
-   Karte
+   Map
 ========================= */
 
 
 .map-container {
 
+    max-width:1000px;
 
-    max-width:
-    1000px;
+    margin:40px auto;
 
-
-    margin:
-    40px auto;
-
-
-    border-radius:
-    30px;
-
+    border-radius:30px;
 
     overflow:hidden;
 
-
-    box-shadow:
-    var(--shadow);
+    box-shadow:var(--shadow);
 
 }
-
 
 
 .map-container iframe {
 
-
     width:100%;
 
-
     height:400px;
-
 
     border:0;
 
 }
-
-
 
 
 
@@ -813,20 +584,13 @@ h2 {
 
 footer {
 
-
-    background:
-    var(--salbei);
-
+    background:var(--salbei);
 
     text-align:center;
 
-
-    padding:
-    30px;
+    padding:30px;
 
 }
-
-
 
 
 
@@ -837,13 +601,11 @@ footer {
 
 @keyframes fadeIn {
 
-
     from {
 
         opacity:0;
 
-        transform:
-        translateY(30px);
+        transform:translateY(30px);
 
     }
 
@@ -852,15 +614,11 @@ footer {
 
         opacity:1;
 
-        transform:
-        translateY(0);
+        transform:translateY(0);
 
     }
 
-
 }
-
-
 
 
 
@@ -871,32 +629,44 @@ footer {
 
 @media(max-width:700px){
 
-.hero::before {
 
-    filter:none;
+    .hero::before {
 
-    width:300px;
+        filter:none;
 
-    height:300px;
+        width:300px;
 
-}
+        height:300px;
+
+    }
 
 
+
+    .hero-content {
+
+        animation:none;
+
+    }
+
+
+
+    nav {
+
+        padding:15px 20px;
+
+    }
 
 
 
     .logo {
 
-
-        font-size:
-        2rem;
+        font-size:2rem;
 
     }
 
 
 
     .menu-toggle {
-
 
         display:block;
 
@@ -906,42 +676,27 @@ footer {
 
     nav ul {
 
-
         position:absolute;
-
 
         top:70px;
 
-
         left:0;
-
 
         width:100%;
 
-
-        background:
-        var(--salbei-hell);
-
+        background:var(--salbei-hell);
 
         display:none;
 
-
         flex-direction:column;
-
 
         text-align:center;
 
+        padding:30px 0;
 
-        padding:
-        30px 0;
+        gap:20px;
 
-
-        gap:
-        20px;
-
-
-        box-shadow:
-        var(--shadow);
+        box-shadow:var(--shadow);
 
     }
 
@@ -949,19 +704,15 @@ footer {
 
     nav ul.active {
 
-
         display:flex;
 
     }
 
 
 
-
     h1 {
 
-
-        font-size:
-        3.5rem;
+        font-size:3.5rem;
 
     }
 
@@ -969,9 +720,7 @@ footer {
 
     h2 {
 
-
-        font-size:
-        2.5rem;
+        font-size:2.5rem;
 
     }
 
@@ -979,13 +728,9 @@ footer {
 
     .photo-placeholder {
 
+        width:140px;
 
-        width:
-        140px;
-
-
-        height:
-        140px;
+        height:140px;
 
     }
 
@@ -993,9 +738,7 @@ footer {
 
     .countdown {
 
-
-        gap:
-        10px;
+        gap:10px;
 
     }
 
@@ -1003,13 +746,9 @@ footer {
 
     .countdown div {
 
+        min-width:75px;
 
-        min-width:
-        75px;
-
-
-        padding:
-        12px;
+        padding:12px;
 
     }
 
@@ -1017,9 +756,7 @@ footer {
 
     .countdown span {
 
-
-        font-size:
-        1.5rem;
+        font-size:1.5rem;
 
     }
 
@@ -1027,9 +764,7 @@ footer {
 
     .section {
 
-
-        padding:
-        70px 15px;
+        padding:70px 15px;
 
     }
 
@@ -1037,12 +772,9 @@ footer {
 
     .card {
 
-
-        padding:
-        25px;
+        padding:25px;
 
     }
-
 
 
 }
